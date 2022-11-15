@@ -47,10 +47,10 @@
 [` Rxvt Unicode `](http://software.schmorp.de/pkg/rxvt-unicode.html) is a customizable terminal branched from [` Rxvt `](https://en.wikipedia.org/wiki/Rxvt "wikipedia:Rxvt").    </br>
 The features of `Rxvt Unicode` include:    </br>
 
-- Multi language support, transparency support, multi font display and [` Perl `]([Perl - ArchWiki](https://wiki.archlinux.org/title/Perl) "Perl") plug-in support through [` Unicode `](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode").    </br>
+- Multi language support, transparency support, multi font display and [` Perl `](https://wiki.archlinux.org/title/Perl "Perl") plug-in support through [` Unicode `](https://en.wikipedia.org/wiki/Unicode "wikipedia:Unicode").    </br>
 
 The warehouse is a `Rxvt Unicode` terminal configuration file.    </br>
-The configuration file in the warehouse mainly refers to [Configuration Description of Rxvt Unicode in [`ArchWiki`](https://wiki.archlinux.org/title/Rxvt-unicode_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29#配置)    </br>
+The configuration file in the warehouse mainly refers to [Configuration Description of Rxvt Unicode in `ArchWiki`](https://wiki.archlinux.org/title/Rxvt-unicode_%28%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87%29#配置)    </br>
 
 ### Instructions：
 
