@@ -52,36 +52,35 @@
 *mainMenu*kill*Label:  Send KILL Signal
 *mainMenu*quit*Label:  Quit
 
-*vtMenu.Label:  VT Options
-*vtMenu*scrollbar*Label:  Enable Scrollbar
-*vtMenu*jumpscroll*Label:  Enable Jump Scroll
-*vtMenu*reversevideo*Label:  Enable Reverse Video
-*vtMenu*autowrap*Label:  Enable Auto Wraparound
-*vtMenu*reversewrap*Label:  Enable Reverse Wraparound
-*vtMenu*autolinefeed*Label:  Enable Auto Linefeed
-*vtMenu*appcursor*Label:  Enable Application Cursor Keys
-*vtMenu*appkeypad*Label:  Enable Application Keypad
-*vtMenu*scrollkey*Label:  Scroll to Bottom on Key Press
-*vtMenu*scrollttyoutput*Label:  Scroll to Bottom on Tty Output
-*vtMenu*allow132*Label: Allow 80/132 Column Switching
-*vtMenu*keepSelection*Label: Keep Selection
-*vtMenu*selectToClipboard*Label: Select to Clipboard
-*vtMenu*cursesemul*Label:  Enable Curses Emulation
-*vtMenu*visualbell*Label:  Enable Visual Bell
-*vtMenu*bellIsUrgent*Label:  Enable Bell Urgency
-*vtMenu*poponbell*Label:  Enable Pop on Bell
-*vtMenu*cursorblink*Label: Enable Blinking Cursor
-*vtMenu*titeInhibit*Label:  Enable Alternate Screen Switching
-*vtMenu*activeicon*Label: Enable Active Icon
-*vtMenu*softreset*Label:  Do Soft Reset
-*vtMenu*hardreset*Label:  Do Full Reset
-*vtMenu*clearsavedlines*Label:  Reset and Clear Saved Lines
-*vtMenu*tekshow*Label:  Show Tek Window
-*vtMenu*tekmode*Label:  Switch to Tek Mode
-*vtMenu*vthide*Label:  Hide VT Window
-*vtMenu*altscreen*Label:  Show Alternate Screen
-*vtMenu*sixelScrolling*Label:  Sixel Scrolling
-*vtMenu*privateColorRegisters*Label:  Private Color Registers
+URxvt.Label:  VT Options
+URxvt*scrollbar*Label:  Enable Scrollbar
+URxvt*jumpscroll*Label:  Enable Jump Scroll
+URxvt*reversevideo*Label:  Enable Reverse Video
+URxvt*autowrap*Label:  Enable Auto Wraparound
+URxvt*reversewrap*Label:  Enable Reverse Wraparound
+URxvt*autolinefeed*Label:  Enable Auto Linefeed
+URxvt*appcursor*Label:  Enable Application Cursor Keys
+URxvt*appkeypad*Label:  Enable Application Keypad
+URxvt*scrollkey*Label:  Scroll to Bottom on Key Press
+URxvt*allow132*Label: Allow 80/132 Column Switching
+URxvt*keepSelection*Label: Keep Selection
+URxvt*selectToClipboard*Label: Select to Clipboard
+URxvt*cursesemul*Label:  Enable Curses Emulation
+URxvt*visualbell*Label:  Enable Visual Bell
+URxvt*bellIsUrgent*Label:  Enable Bell Urgency
+URxvt*poponbell*Label:  Enable Pop on Bell
+URxvt*cursorblink*Label: Enable Blinking Cursor
+URxvt*titeInhibit*Label:  Enable Alternate Screen Switching
+URxvt*activeicon*Label: Enable Active Icon
+URxvt*softreset*Label:  Do Soft Reset
+URxvt*hardreset*Label:  Do Full Reset
+URxvt*clearsavedlines*Label:  Reset and Clear Saved Lines
+URxvt*tekshow*Label:  Show Tek Window
+URxvt*tekmode*Label:  Switch to Tek Mode
+URxvt*vthide*Label:  Hide VT Window
+URxvt*altscreen*Label:  Show Alternate Screen
+URxvt*sixelScrolling*Label:  Sixel Scrolling
+URxvt*privateColorRegisters*Label:  Private Color Registers
 
 *fontMenu.Label:  VT Fonts
 *fontMenu*fontdefault*Label:	Default
@@ -198,13 +197,25 @@
 !*allowWindowOps: false
 
 ! URxvt settings
+
+!When PrintScreen is pressed, printing terminal content is disabled.
+URxvt.print-pipe: "cat > /dev/null"
+
 ! copy & paste
 URxvt*VT100.translations:#override <Btn1UP>:select-end(PRIMARY,CLIPBOARD,CUT_BUFFERO)
-URxvt.perl-ext-common: selection-to-clipboard,matcher,resize-font,searchable-scrollback
+URxvt.perl-ext-common: clipboard,matcher,resize-font,searchable-scrollback
 URxvt.perl-ext: url-select
 
 !Search function
 URxvt.keysym.M-s: searchable-scrollback:start
+URxvt.clipboard.autocopy: true
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.matcher.rend.0: Uline Bold fg5
+!URxvt.perl-ext: default,url-select
+!URxvt.keysym.M-u: perl:url-select:select_next
+!URxvt.url-select.launcher: /usr/bin/xdg-open
+!URxvt.url-select.underline: true
 
 !Anti-Aliasing
 Xft.antialias: true 
@@ -219,6 +230,8 @@ Xft.dpi:96
 URxvt*faceName: DejaVu Sans Mono:antialias=True:pixelsize=13
 !Chinese font
 URxvt*faceNameDoublesize:WenQuanYi Zen Hei Mono:antialias=True:pixelsize=13
+!Font spacing
+!URxvt.letterSpace: -1
 
 !input method
 URxvt*inputMethod:fictx
@@ -253,9 +266,13 @@ URxvt.inheritPixmap:true
 
 !Tab set
 URxvt.perl-ext-common: default,tabbed
-!URxvt.tabbed.tab-fg: 12
-!URxvt.tabbed.tab-bg: 0
-!URxvt.tabbed.tabbar-fg: 4
+URxvt.tabbed.tab-fg: 12
+URxvt.tabbed.tab-bg: 0
+URxvt.tabbed.tabbar-fg: 4
+URxvt.tabbed.tabbar-bg: 0
+
+! Fix errors
+URxvt*skipBuiltinGlyphs:true
 
 !Color setting
 URxvt.depth:50
