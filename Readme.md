@@ -30,7 +30,19 @@
   $ mv -v .Xresources ~/
   ```
 
-- ③ 重启`Rxvt-Unicode`终端，以使用修改好的配置文件。    </br>
+- ③ 将`/etc/X11/app-default/`文件夹内的[`URxvt`](https://github.com/jidro/rxvt-unicode/blob/master/URxvt "URxvt")文件做个备份。
+  
+  ```shell
+  $ sudo cp -rfpv /etc/X11/app-default/URxvt /etc/X11/app-default/URxvt.bak
+  ```
+  
+- ④ 将该仓库中的[`URxvt`](https://github.com/jidro/rxvt-unicode/blob/master/URxvt "URxvt")文件复制到`/etc/X11/app-default/`文件夹内。
+  
+  ```shell
+  $ sudo cp -rfpv URxvt /etc/X11/app-default
+  ```
+
+- ⑤ 重启`Rxvt-Unicode`终端，以使用修改好的配置文件。    </br>
 
 ------
 
@@ -66,7 +78,19 @@ $ cp -rfpv Xresources .Xresources
 $ mv -v .Xresources ~/
 ```
 
-- ③ Restart the `Rxvt Unicode` terminal to use the modified configuration file.    </br>
+- ③ Make a backup of the [ `URxvt` ](https://github.com/jidro/rxvt-unicode/blob/master/URxvt 'URxv ') file in the `/etc/X11/app-default/` folder.
+  
+  ```shell
+  $ sudo cp -rfpv /etc/X11/app-default/URxvt /etc/X11/app-default/URxvt.bak
+  ```
+  
+- ④ Copy the [`URxvt`](https://github.com/jidro/rxvt-unicode/blob/master/URxvt 'URxvt') file in the repository to the `/etc/X11/app-default/` folder.
+  
+  ```shell
+  $ sudo cp -rfpv URxvt /etc/X11/app-default
+  ```
+
+- ⑤ Restart the `Rxvt Unicode` terminal to use the modified configuration file.    </br>
 
 ------
 
